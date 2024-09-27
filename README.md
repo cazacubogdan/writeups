@@ -1,2 +1,2 @@
 # writeups
-Writeups for different CTF events and exercises
+Writeups for CTF's, levels, games, wargames, online and offline
