@@ -1,5 +1,4 @@
-# writeups
-Writeups for CTF's, levels, games, wargames, online and offline
+# Writeups for CTF's, levels, games, wargames, online and offline
 
 Structure:
-game/level
+organizer/game/level
