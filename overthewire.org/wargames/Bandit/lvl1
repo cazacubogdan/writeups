@@ -1,0 +1,17 @@
+lvl 1
+
+connect to bandit.labs.overthewire.org port 2220
+u: bandit1
+p: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If 
+
+===
+Level Goal
+The password for the next level is stored in a file called - located in the home directory
+
+Commands you may need to solve this level
+ls , cd , cat , file , du , find
+
+=== solution
+
+bandit1@bandit:/$ cat /home/bandit1/-
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx

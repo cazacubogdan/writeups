@@ -1,0 +1,21 @@
+lvl 10
+
+connect to bandit.labs.overthewire.org port 2220
+u: bandit10
+p: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+===
+Level Goal
+The password for the next level is stored in the file data.txt, which contains base64 encoded data
+
+Commands you may need to solve this level
+grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
+
+=== solution
+
+bandit10@bandit:~$ cd /home/bandit10/
+bandit10@bandit:~$ ls
+data.txt
+bandit10@bandit:~$ base64 -d data.txt
+The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+bandit10@bandit:~$

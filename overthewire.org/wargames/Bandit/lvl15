@@ -1,0 +1,158 @@
+lvl 15
+
+connect to bandit.labs.overthewire.org port 2220
+u: bandit15
+p: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+===
+Level Goal
+The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL/TLS encryption.
+
+Helpful note: Getting “DONE”, “RENEGOTIATING” or “KEYUPDATE”? Read the “CONNECTED COMMANDS” section in the manpage.
+
+Commands you may need to solve this level
+ssh, telnet, nc, ncat, socat, openssl, s_client, nmap, netstat, ss
+
+=== solution
+
+bandit15@bandit:~$ openssl s_client -connect localhost:30001
+CONNECTED(00000003)
+Can't use SSL_get_servername
+depth=0 CN = SnakeOil
+verify error:num=18:self-signed certificate
+verify return:1
+depth=0 CN = SnakeOil
+verify return:1
+---
+Certificate chain
+ 0 s:CN = SnakeOil
+   i:CN = SnakeOil
+   a:PKEY: rsaEncryption, 4096 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Jun 10 03:59:50 2024 GMT; NotAfter: Jun  8 03:59:50 2034 GMT
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIFBzCCAu+gAwIBAgIUBLz7DBxA0IfojaL/WaJzE6Sbz7cwDQYJKoZIhvcNAQEL
+BQAwEzERMA8GA1UEAwwIU25ha2VPaWwwHhcNMjQwNjEwMDM1OTUwWhcNMzQwNjA4
+MDM1OTUwWjATMREwDwYDVQQDDAhTbmFrZU9pbDCCAiIwDQYJKoZIhvcNAQEBBQAD
+ggIPADCCAgoCggIBANI+P5QXm9Bj21FIPsQqbqZRb5XmSZZJYaam7EIJ16Fxedf+
+jXAv4d/FVqiEM4BuSNsNMeBMx2Gq0lAfN33h+RMTjRoMb8yBsZsC063MLfXCk4p+
+09gtGP7BS6Iy5XdmfY/fPHvA3JDEScdlDDmd6Lsbdwhv93Q8M6POVO9sv4HuS4t/
+jEjr+NhE+Bjr/wDbyg7GL71BP1WPZpQnRE4OzoSrt5+bZVLvODWUFwinB0fLaGRk
+GmI0r5EUOUd7HpYyoIQbiNlePGfPpHRKnmdXTTEZEoxeWWAaM1VhPGqfrB/Pnca+
+vAJX7iBOb3kHinmfVOScsG/YAUR94wSELeY+UlEWJaELVUntrJ5HeRDiTChiVQ++
+wnnjNbepaW6shopybUF3XXfhIb4NvwLWpvoKFXVtcVjlOujF0snVvpE+MRT0wacy
+tHtjZs7Ao7GYxDz6H8AdBLKJW67uQon37a4MI260ADFMS+2vEAbNSFP+f6ii5mrB
+18cY64ZaF6oU8bjGK7BArDx56bRc3WFyuBIGWAFHEuB948BcshXY7baf5jjzPmgz
+mq1zdRthQB31MOM2ii6vuTkheAvKfFf+llH4M9SnES4NSF2hj9NnHga9V08wfhYc
+x0W6qu+S8HUdVF+V23yTvUNgz4Q+UoGs4sHSDEsIBFqNvInnpUmtNgcR2L5PAgMB
+AAGjUzBRMB0GA1UdDgQWBBTPo8kfze4P9EgxNuyk7+xDGFtAYzAfBgNVHSMEGDAW
+gBTPo8kfze4P9EgxNuyk7+xDGFtAYzAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3
+DQEBCwUAA4ICAQAKHomtmcGqyiLnhziLe97Mq2+Sul5QgYVwfx/KYOXxv2T8ZmcR
+Ae9XFhZT4jsAOUDK1OXx9aZgDGJHJLNEVTe9zWv1ONFfNxEBxQgP7hhmDBWdtj6d
+taqEW/Jp06X+08BtnYK9NZsvDg2YRcvOHConeMjwvEL7tQK0m+GVyQfLYg6jnrhx
+egH+abucTKxabFcWSE+Vk0uJYMqcbXvB4WNKz9vj4V5Hn7/DN4xIjFko+nREw6Oa
+/AUFjNnO/FPjap+d68H1LdzMH3PSs+yjGid+6Zx9FCnt9qZydW13Miqg3nDnODXw
++Z682mQFjVlGPCA5ZOQbyMKY4tNazG2n8qy2famQT3+jF8Lb6a4NGbnpeWnLMkIu
+jWLWIkA9MlbdNXuajiPNVyYIK9gdoBzbfaKwoOfSsLxEqlf8rio1GGcEV5Hlz5S2
+txwI0xdW9MWeGWoiLbZSbRJH4TIBFFtoBG0LoEJi0C+UPwS8CDngJB4TyrZqEld3
+rH87W+Et1t/Nepoc/Eoaux9PFp5VPXP+qwQGmhir/hv7OsgBhrkYuhkjxZ8+1uk7
+tUWC/XM0mpLoxsq6vVl3AJaJe1ivdA9xLytsuG4iv02Juc593HXYR8yOpow0Eq2T
+U5EyeuFg5RXYwAPi7ykw1PW7zAPL4MlonEVz+QXOSx6eyhimp1VZC11SCg==
+-----END CERTIFICATE-----
+subject=CN = SnakeOil
+issuer=CN = SnakeOil
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: RSA-PSS
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 2103 bytes and written 373 bytes
+Verification error: self-signed certificate
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Server public key is 4096 bit
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 18 (self-signed certificate)
+---
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: 9D8BBED311CD6C08C9892E69DDDEC0DC280AEAA97291920708AF4ECF01703AD1
+    Session-ID-ctx:
+    Resumption PSK: D007A5309DC44DE3D6A6B09019098A9E76CC202468D408D2272A14E985C5C9B7FE4F3AF4E5C43B3AD9EFB770E28C5C11
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 300 (seconds)
+    TLS session ticket:
+    0000 - 6d 53 6c c8 51 69 b9 21-da 14 fb d6 94 d7 00 1e   mSl.Qi.!........
+    0010 - b5 3c cb 5a 24 ab 4e a1-80 8a 9d 6b 15 23 c9 34   .<.Z$.N....k.#.4
+    0020 - 0e 5d 20 2e c7 e5 3a 51-dc bd c7 fc 63 9a 63 ff   .] ...:Q....c.c.
+    0030 - 3c 6e 4f df 15 5f 1a db-05 0a b5 8c d8 ac ee 1d   <nO.._..........
+    0040 - 51 fb 52 f5 e7 cd c9 53-b6 7d 9c 90 19 f7 49 51   Q.R....S.}....IQ
+    0050 - 22 7e 18 56 a1 28 8b 91-54 bd 4b 31 59 7c e6 5e   "~.V.(..T.K1Y|.^
+    0060 - 5f b5 25 a3 2e 10 bc 27-23 fe 90 35 09 8d c4 a9   _.%....'#..5....
+    0070 - b6 01 14 0c 4d f4 f3 2d-21 9d 47 83 e2 12 65 9d   ....M..-!.G...e.
+    0080 - 50 ec a7 da ce 2d 48 02-4d d2 ea 59 51 a5 22 4c   P....-H.M..YQ."L
+    0090 - 92 9b ed b1 f9 a8 b1 1a-79 bd 12 58 70 7b 30 5b   ........y..Xp{0[
+    00a0 - 9f d0 89 67 f9 1d 0d 80-74 29 23 15 fc de 25 06   ...g....t)#...%.
+    00b0 - ef 08 6f c9 38 8e bf 7e-21 38 80 0c 1d 05 54 27   ..o.8..~!8....T'
+    00c0 - c9 97 53 b1 eb 17 03 d8-ff ac 35 44 4c d3 4b 77   ..S.......5DL.Kw
+    00d0 - 39 e8 97 9a a2 b4 f6 ee-0b a7 ed 55 e7 ae e7 d1   9..........U....
+
+    Start Time: 1727473689
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self-signed certificate)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: 2D26CDD9297C2797181A52A8B7727AB975FEFDB3B059B7A53962BA7E66CBFA23
+    Session-ID-ctx:
+    Resumption PSK: F9AC2E36A091703115CC4FCB6CFD23F12D7BEE6E30639BA6B6AB5FCDD2516371B5D1531D2756FDA4FD485226936AE06C
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 300 (seconds)
+    TLS session ticket:
+    0000 - 6d 53 6c c8 51 69 b9 21-da 14 fb d6 94 d7 00 1e   mSl.Qi.!........
+    0010 - 2d 1f 98 d7 fe 28 56 44-f9 9a 31 31 94 7f 0e d6   -....(VD..11....
+    0020 - 9e 8b 6f 68 b8 8b 72 88-fe 3b 2f c9 ae d9 82 ca   ..oh..r..;/.....
+    0030 - bb e8 1b 00 0d fb 6f 7b-fe b4 3a d2 4f ad 50 86   ......o{..:.O.P.
+    0040 - 7e b9 ae 97 22 23 ca 1f-7e ec 86 46 e4 d0 44 c7   ~..."#..~..F..D.
+    0050 - 4c 66 b5 e9 42 f6 4c b4-be fc 0e 43 04 15 14 ed   Lf..B.L....C....
+    0060 - 04 90 e8 ec ed b3 8e a1-e1 49 87 19 56 3e 67 c6   .........I..V>g.
+    0070 - 44 11 e3 57 9b 14 87 5f-5b 0f d3 5f 89 03 1c e6   D..W..._[.._....
+    0080 - bc 1d ba 76 e8 26 90 bc-85 d7 73 5b 09 f5 5d b4   ...v.&....s[..].
+    0090 - 39 3a 2d 8c e8 16 62 7f-76 54 24 fe 6b e3 ea 6e   9:-...b.vT$.k..n
+    00a0 - 4f e7 63 5e 20 f7 70 f6-ba 88 c8 40 d3 da d2 b6   O.c^ .p....@....
+    00b0 - 93 70 34 fc 7b 25 c5 ac-06 9c 0b bd ba c5 71 14   .p4.{%........q.
+    00c0 - b9 81 91 49 92 50 d8 16-2d 44 b7 65 56 7f 7a 40   ...I.P..-D.eV.z@
+    00d0 - bc 2f 5c a8 2b dc b1 90-9c 68 7e 51 95 b6 bf b0   ./\.+....h~Q....
+
+    Start Time: 1727473689
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self-signed certificate)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo {ENTER}
+Correct!
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
+closed
+bandit15@bandit:~$

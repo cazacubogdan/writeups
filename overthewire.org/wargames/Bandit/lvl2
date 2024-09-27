@@ -1,0 +1,17 @@
+lvl 2
+
+connect to bandit.labs.overthewire.org port 2220
+u: bandit2
+p: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx 
+
+===
+Level Goal
+The password for the next level is stored in a file called spaces in this filename located in the home directory
+
+Commands you may need to solve this level
+ls , cd , cat , file , du , find
+
+=== solution
+
+bandit2@bandit:~$ cat /home/bandit2/spaces\ in\ this\ filename
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx

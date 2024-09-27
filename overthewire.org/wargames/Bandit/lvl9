@@ -1,0 +1,24 @@
+lvl 9
+
+connect to bandit.labs.overthewire.org port 2220
+u: bandit9
+p: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+===
+Level Goal
+The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+
+Commands you may need to solve this level
+grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
+
+=== solution
+
+bandit9@bandit:~$ cd /home/bandit9/
+bandit9@bandit:~$ ls
+data.txt
+bandit9@bandit:~$ strings data.txt | grep "===="
+}========== the
+3JprD========== passwordi
+~fDV3========== is
+D9========== FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+bandit9@bandit:~$

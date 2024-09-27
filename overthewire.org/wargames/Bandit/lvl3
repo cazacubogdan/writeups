@@ -1,0 +1,17 @@
+lvl 3
+
+connect to bandit.labs.overthewire.org port 2220
+u: bandit3
+p: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx 
+
+===
+Level Goal
+The password for the next level is stored in a hidden file in the inhere directory.
+
+Commands you may need to solve this level
+ls , cd , cat , file , du , find
+
+=== solution
+
+bandit3@bandit:~/inhere$ cat /home/bandit3/inhere/...Hiding-From-You
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
