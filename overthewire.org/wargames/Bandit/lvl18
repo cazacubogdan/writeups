@@ -1,0 +1,15 @@
+lvl 18
+
+connect to bandit.labs.overthewire.org port 2220
+u: bandit18
+p: x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+
+===
+Level Goal
+The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
+
+=== solution
+
+SOLVE lvl19 first!
+
+=== solution after lvl19
